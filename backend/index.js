@@ -15,8 +15,9 @@ const credential = mongoose.model("credential", {}, "bulkmail");
 
 // ✅ Add this route to test from browser/Postman/Render
 app.get("/", (req, res) => {
-  res.send("✅ BulkMail backend is live");
+  res.status(200).json({ message: "BulkMail backend is live" });
 });
+
 
 app.post("/sendemail", function (req, res) {
   const msg = req.body.msg;
